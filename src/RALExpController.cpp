@@ -23,8 +23,6 @@ RALExpController::RALExpController(mc_rbdyn::RobotModulePtr rm, double dt, const
   compPostureTask->target(postureTarget);
   solver().addTask(compPostureTask);
 
-  robot().addDevice(mc_rbdyn::VirtualTorqueSensor("VirtualTorqueSensor2", 7).clone());
-
   compEETask = std::make_shared<mc_tasks::CompliantEndEffectorTask>("FT_sensor_mounting", robots(),
                                                                     robot().robotIndex(), 1.0, 10000.0);
 
